@@ -1,0 +1,25 @@
+{"mb1":{"img":"img/img1.jpg",
+		 "pcontent":"我们今天吃什么？",
+		 "boolean":"true"
+		},
+"mb2":{"img":"img/img2.jpg",
+		"pcontent":"不好，那个不好吃",
+		"boolean":"false"
+		},
+"mb3":{"img":"img/img1.jpg",
+		 "pcontent":"鱼香肉丝",
+		 "boolean":"true"
+		},
+"mb4":{"img":"img/img2.jpg",
+		 "pcontent":"嗯呢，可以",
+		 "boolean":"false"
+		},
+"mb5":{"img":"img/img1.jpg",
+		"pcontent":"了解？",
+		"boolean":"true"
+		},
+"mb6":{"img":"img/img1.jpg",
+		"pcontent":"no？",
+		"boolean":"true"
+		}	
+ }

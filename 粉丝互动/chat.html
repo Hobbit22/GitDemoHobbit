@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimun-scale=1,maximun-scale=1"/>
+<meta name="format-detection" content="telephone=no,address=no,email=no"/>
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<section id="wrap">
+		<!--<header id="head">
+			<div class="headTop">
+				<div class="headTopL">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="last"></span>
+					<div class="topText">SIGNAL</div>
+					<div class="icon"></div>
+				</div>
+				<div class="headTopC">8:16<span>AM</span></div>
+				<div class="headTopB clear">
+					<div class="bluetooth"></div>
+					<div class="centerText">50%</div>
+					<div class="electricity"></div>
+				</div>
+			</div>
+			<div class="headBottom clear">
+				<div class="return">
+					<a href="javascript:;">返回</a>
+				</div>
+				<div class="bind name">张晓丽</div>
+				<div class="headBottomS clear">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</header>-->
+		<section id="chatContent">
+			<div id="wrapper">
+				<div id="scroller">
+					<div id="pullDown" class="clear">
+						<span class="pullDownIcon"></span><span class="pullDownLabel">更多消息...</span>
+					</div>
+					<div id="thelist">
+						<div class="time">17:39</div>
+						<div class="dialogue1 clear">
+							<img src="img/img1.jpg"/>
+							<div class="bg">
+								<p>昨天留的什么作业啊？</p>
+								<span class="angle"></span>
+							</div>
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>没留作业</p>
+							</div>
+						</div>
+						<div class="time">17:42</div>
+						<div class="dialogue1 clear">
+							<img src="img/img1.jpg"/>
+							<div class="bg">
+								<span class="angle"></span>
+								<p>那就好，我们家小朋友没跟我说有什么作业，我就想着问问，怕到时候老师检查，没做就不好了！</p>
+							</div>
+						</div>
+						<div class="dialogue1 talkone clear">
+							<img src="img/img1.jpg"/>
+							<div class="bg">
+								<span class="angle"></span>
+								<p>就打算问一下</p>
+							</div>
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>是，了解</p>
+							</div>
+							
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>是，了解</p>
+							</div>
+							
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>是，了解</p>
+							</div>
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>是，了解</p>
+							</div>
+							
+						</div>
+						<div class="dialogue2 clear">
+							<img src="img/img2.jpg"/>
+							<div class="bg2">
+								<span class="angle2"></span>
+								<p>是，了解</p>
+							</div>
+							
+						</div>
+						<div class="dialogue1 talkone clear">
+							<img src="img/img1.jpg"/>
+							<div class="bg">
+								<span class="angle"></span>
+								<p>就打算问一下</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="contentB">
+				<form>
+					<div>
+						<input type="text" placeholder=""/>
+						<a href="javascript:;" class="send">发送</a>
+					</div>
+				</form>
+			</div>
+		</section>
+	</section>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+    $(function (){
+    	var iWidth=document.documentElement.getBoundingClientRect().width;iWidth=iWidth>640?640:iWidth;
+    	document.getElementsByTagName("html")[0].style.fontSize=iWidth/10+"px";
+    	
+    })
+</script>
+<script src="js/iscroll.js"></script>
+ <script>
+ 
+var myScroll,
+	pullDownEl, pullDownOffset,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+var oldym = 0;
+var oldynum = 0;
+var pagekg = true;
+function pullDownAction () {
+	setTimeout(function () {
+		var el, li, i;
+		el = document.getElementById('thelist');
+		
+		if(pagekg===true){
+			oldynum = 0;
+			pagekg=false;
+			$.ajax({
+//				type:"post",
+				url: "chat.json",
+				dataType: "json",
+				async: true,
+				success: function(olist) {
+					for(i in olist) {
+						if(oldynum < oldym+15&&oldynum>=oldym){
+							li = document.createElement('div');
+							if(olist[i]["boolean"]=='true'){
+								li.innerHTML = '<div class="dialogue1 talkone clear"><img src="'+olist[i]["img"]+'"/><div class="bg"><span class="angle"></span><p>'+olist[i]["pcontent"]+'</p></div></div>';
+							}else if(olist[i]["boolean"]=='false'){
+								li.innerHTML = '<div class="dialogue2 clear"><img src="'+olist[i]["img"]+'"/><div class="bg2"><span class="angle2"></span><p>'+olist[i]["pcontent"]+'</p></div></div>';
+							}
+							el.insertBefore(li, el.childNodes[0]);
+							oldynum++;
+							myScroll.refresh();
+						};	
+					}
+					pagekg=true;
+					if(oldym>=oldynum){
+						$('#pullDown').addClass('nomore')
+						$('.pullDownLabel').html('没有更多了');
+						return false
+					};
+					oldym=oldym+15;
+				}
+			});
+		}
+		       
+	}, 1000);
+}
+
+window.onresize = function(){
+	$('#wrapper').css('height',$(window).height()-parseInt($('.contentB').outerHeight()));
+	
+	
+}
+function loaded() {
+	$('#wrapper').css('height',$(window).height()-parseInt($('.contentB').outerHeight()));
+	pullDownEl = document.getElementById('pullDown');
+	myScroll = new iScroll('wrapper', {
+		scrollbarClass: 'myScrollbar', 
+		useTransition: false, 
+		topOffset: pullDownOffset,
+		onRefresh: function () {
+			if (pullDownEl.className.match('loading')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'flip';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+				this.minScrollY = -pullDownOffset;
+			} 
+		},
+		onScrollEnd: function () {
+			if (pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'loading';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';	
+				pullDownAction();
+			} 
+		}
+	});
+	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+	
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false); 
+ 
+ 
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimun-scale=1,maximun-scale=1"/>
+<meta name="format-detection" content="telephone=no,address=no,email=no"/>
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<section id="wrap">
+		<header id="head">
+			<div class="headTop">
+				<div class="headTopL">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="last"></span>
+					<div class="topText">SIGNAL</div>
+					<div class="icon"></div>
+				</div>
+				<div class="headTopC">8:16<span>AM</span></div>
+				<div class="headTopB clear">
+					<div class="bluetooth"></div>
+					<div class="centerText">50%</div>
+					<div class="electricity"></div>
+				</div>
+			</div>
+			<div class="headBottom clear">
+				<div class="return">
+					<a href="javascript:;">返回</a>
+				</div>
+				<div class="bind">我的圈子</div>
+				<div class="headBottomS clear">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</header>
+		<section id="fansContent">
+			<div class="tab" id="change">
+				<ul>
+					<li>
+						<a href="javascript:;" class="active">
+							我的粉丝<span>(0)</span>
+						</a>
+					</li>
+					<li class="second">
+						<a href="javascript:;">
+							我的关注<span>(19)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nofansCon">
+				<img src="img/nofans.png"/>
+				<p>您暂时还没有粉丝</p>
+			</div>
+		</section>
+	</section>
+</body>
+<script>
+    window.onload = function (){
+    	var iWidth=document.documentElement.getBoundingClientRect().width;iWidth=iWidth>640?640:iWidth;
+    	document.getElementsByTagName("html")[0].style.fontSize=iWidth/10+"px";
+    	
+    	var oTab = document.getElementById('change');
+    	var oA = oTab.getElementsByTagName('a');
+    	
+    	for (var i=0;i<oA.length;i++) {
+    		oA[i].index = i;
+    		oA[i].onclick = function(){
+    			for (var i=0;i<oA.length;i++) {
+    				oA[i].className = '';
+    			}
+    		this.className = 'active';
+    		}
+    	}
+    }
+</script>
+</html>

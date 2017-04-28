@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimun-scale=1,maximun-scale=1"/>
+<meta name="format-detection" content="telephone=no,address=no,email=no"/>
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<section id="wrap">
+		<header id="head">
+			<div class="headTop">
+				<div class="headTopL">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span class="last"></span>
+					<div class="topText">SIGNAL</div>
+					<div class="icon"></div>
+				</div>
+				<div class="headTopC">8:16<span>AM</span></div>
+				<div class="headTopB clear">
+					<div class="bluetooth"></div>
+					<div class="centerText">50%</div>
+					<div class="electricity"></div>
+				</div>
+			</div>
+			<div class="headBottom clear">
+				<div class="return">
+					<a href="javascript:;">返回</a>
+				</div>
+				<div class="bind">绑定手机</div>
+				<div class="headBottomS clear">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</header>
+		<section id="content">
+			<div>
+				<form action="#" id="form1">
+					<div class="contentTop">
+						<div class="number">
+							<span></span>
+							<input type="text" placeholder="请输入要绑定的手机号" id="mobile"/>
+						</div>
+						<div class="pass">
+							<span></span>
+							<input type="text" placeholder="请输入密码" id="password"/>
+						</div>
+						<div class="verification clear" id="runtime">
+							<input type="text" placeholder="请输入收到的验证码" id="verifi"/>
+							<a href="javascript:;">发送验证码</a>
+							<div class="flo"></div>
+						</div>
+						<div class="over">
+							<input type="submit" value="完成"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</section>
+</body>
+<script>
+    window.onload = function (){   	
+    	var iWidth=document.documentElement.getBoundingClientRect().width;iWidth=iWidth>640?640:iWidth;
+    	document.getElementsByTagName("html")[0].style.fontSize=iWidth/10+"px";
+    	
+    	var oTime = document.getElementById('runtime');
+    	var oA = oTime.getElementsByTagName('a');
+    	var oFlo = oTime.getElementsByTagName('div');
+    	var oTimer = null;
+ 		var num 
+
+    	oA[0].onclick = function(){
+    		num = 60;
+    		
+    		clearInterval(oTimer);
+    		oTimer = setInterval(function(){
+    			num--
+    			oA[0].innerHTML ='过('+num+'s)后重新获取';
+    			oA[0].style.background = '#ccc';
+    			oA[0].style.color = '#444';
+    			
+    			if(num<=0){
+	    			oA[0].innerHTML = '重新发送验证码';
+	    			oA[0].style.background = '#ec5656';
+	    			oA[0].style.color = '#fff';
+	    			oFlo[0].style.display = 'none';
+	    			clearInterval(oTimer);
+	    		}
+    		},1000)
+    		
+    		if(oTimer){
+    			oFlo[0].style.display = 'block';
+    		}else{
+    			oFlo[0].style.display = 'none';
+    		}
+    	}
+    	
+    	var oMob = document.getElementById('mobile');
+    	var Form = document.getElementById('form1')
+    	var mobile_check = /^13[0-9]{1}[0-9]{8}$|^15[012356789]{1}[0-9]{8}$|^17[01678]{1}[0-9]{8}$|^18[01256789]{1}[0-9]{8}$/;
+    	Form.onsubmit = function(event){			
+			if(!oMob.value){
+				oMob.value = '*请输入手机号码*'
+				return false;
+				 
+			}else if( !mobile_check.test(oMob.value) ){
+				oMob.value = '*请输入正确的手机号码*'
+				return false;
+				
+			}
+		}
+ 
+    	
+    }
+</script>
+</html>

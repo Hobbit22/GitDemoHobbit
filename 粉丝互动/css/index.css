@@ -1,0 +1,608 @@
+
+/********************************   reset start   *******************************/
+body,ul,input,p,form{
+	margin: 0;
+	padding: 0;
+	font-family:"微软雅黑" ;
+}
+
+img{
+	border: none;
+	vertical-align: top;
+}
+input{
+	-webkit-appearance:none;
+	border: none;
+	background: none;
+}
+li{
+	list-style: none;
+}
+body{
+	background: #f4f4f4;
+}
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+
+.clear{
+	zoom: 1;
+}
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/********************************   reset end   *******************************/
+
+/********************************   public start   *******************************/
+#wrap{
+	margin: 0 auto;
+}
+
+#head{
+	background: #282828;
+	border-bottom:1px solid #cccccc ;
+}
+
+#head .headTop{
+	height:0.28125rem;
+	padding: 0.171875rem 0 0.171875rem 0.1875rem;
+	
+}
+#head .headTopL span{
+	width:0.171875rem;
+	height:0.17189rem;
+	background: url(../img/doc.png) no-repeat;
+	background-size:100% ;
+	margin:0.0625rem 0.046875rem 0.046875rem 0;
+	float: left;
+}
+
+#head .headTopL span.last{
+	background: url(../img/doc2.png) no-repeat;
+	background-size:100% ;
+}
+
+#head .headTopL .icon{
+	background: url(../img/icon.png) no-repeat;
+	background-size:100%;
+	width:0.40625rem;
+	height:0.28125rem;
+	float: left;
+	margin-left:0.21875rem ;
+}
+#head .headTopL .topText{
+	font-size:12px;
+	line-height:0.28125rem ;
+	color: #fff;
+	float: left;
+	margin-left:0.109375rem ;
+}
+
+#head .headTopC{
+	float: left;
+	color: #fff;
+	font-size: 12px;
+	line-height:0.28125rem;
+	margin-left: 1rem;
+
+}
+#head .headTopC span{
+	padding-left: 0.125rem;
+}
+
+#head .headTopB{
+	float: right;
+	margin-right: 0.1875rem;
+}
+
+#head .headTopB .bluetooth{
+	background:url(../img/bluetooth.png) no-repeat;
+	background-size:100% ;
+	width: 0.234375rem;
+	height: 0.421875rem;
+	float: left;
+	opacity: 0.5;
+}
+
+#head .headTopB .centerText{
+	font-size:12px ;
+	line-height:0.28125rem;
+	margin-left:0.25rem;
+	color: #fff;
+	margin-top: 0.0625rem;
+	float: left;
+}
+
+#head .headTopB .electricity{
+	width:0.765625rem;
+	height:0.296875rem ;
+	background:url(../img/electricity.png) no-repeat ;
+	background-size:100% ;
+	margin-top: 0.0625rem;
+	margin-left:0.1875rem;
+	float: left;
+}
+
+#head .headBottom .return{
+	background: url(../img/arrow.png) no-repeat;
+	background-size:0.296875rem 0.5rem;
+	height:0.5rem ;
+	font-size:16px ;
+	line-height: 0.5rem;
+	margin:0.4375rem 0 0.421875rem 0.3125rem;
+	float: left;
+}
+
+#head .headBottom .return a{
+	color: #fff;
+	margin-left: 0.46875rem;
+}
+
+#head .headBottom .bind{
+	font-size:19px ;
+	line-height:1.359375rem ;
+	height:1.359375rem ;
+	color: #fff;
+	float: left;
+	margin-left:2.03125rem ;
+}
+
+#head .headBottomS{
+	margin:0.390625rem 0.46rem 0.375rem 0;
+	float: right;
+}
+
+
+
+#head .headBottom span{
+	background: url(../img/doc.png) no-repeat;
+	background-size: 100%;
+	width:0.15625rem;
+	height:0.1564rem;
+	margin:0.21875rem 0.125rem 0.21875rem 0;
+	float: left;
+}
+
+/********************************   public end   *******************************/
+
+/********************************   bindMobile  start  *******************************/
+
+#content{
+	margin:0.84375rem  0.5555555555555556rem 0 0.5555555555555556rem ;
+}
+
+#content .number,#content .pass{
+	width:9.03125rem ;
+	height:1.34375rem ;
+	margin:0.234375rem 0 ;
+	background:#fff;
+	position: relative;
+	border: 1px solid #ccc;
+}
+
+
+
+.number span{
+	position: absolute;
+	width:0.40625rem;
+	height:0.625rem;
+	background:url(../img/tel.png) no-repeat;
+	background-size:100% ;
+	left:0.5625rem;
+	top:0.359375rem ;
+}
+
+.number input, .pass input{
+	display: block;
+	width:7.328125rem ;
+	height:100%;
+	background:#fff;
+	font-size:14px;
+	line-height:1.34375rem;
+	margin-left:1.6875rem;
+	outline: none;
+}
+
+.pass span{
+	position: absolute;
+	width:0.40625rem;
+	height:0.625rem;
+	background:url(../img/pass.png) no-repeat;
+	background-size:100% ;
+	left:0.5625rem;
+	top:0.59375rem ;
+}
+.verification{
+	width: 9.0625rem;
+	padding:0.234375rem 0;
+	position: relative;
+	
+}
+
+.verification input{
+	display: block;
+	width:4.96875rem ;
+	height:1.34375rem ;
+	background:#fff;
+	text-align: center;
+	font-size:14px;
+	line-height:0.625rem;
+	text-indent:0.46875rem;
+	border:1px solid #ccc;
+	float: left;
+}
+.verification .flo{
+	width:3.90625rem ;
+	height:1.375rem ;
+	position:absolute;
+	left:5.2rem;
+	top: 0.25rem;
+	display: none;
+}
+
+.verification a{
+	width:3.90625rem ;
+	height:1.375rem ;
+	color: #fff;
+	font-size:14px;
+	background:#ec5656;
+	line-height: 1.375rem ;
+	float: right;
+	text-align: center;
+}
+
+
+
+#content .over{
+	width:9.0625rem ;
+	height:1.375rem ;
+	background:#ec5656;
+	border-radius:3px ;
+	text-align: center;
+	margin-top:1.953125rem ;
+	
+}
+
+#content .over input{
+	color: #fff;
+	font-size:14px ;
+	line-height: 1.375rem;
+	width:1.25rem ;
+	text-align: center;
+	height: 1.375rem;
+	display:block;
+	margin: 0 auto;
+	outline: none;
+	
+}
+
+/************************ bindMobile end ************************/
+
+/************************ chat  start ************************/
+#head .headBottom .name{
+	margin-left:2.40625rem ;
+}
+
+#chatContent .time{
+	width:1.5625rem;
+	height:0.625rem;
+	font:12px/0.625rem "微软雅黑";
+	color:#999;
+	background:#e5e5e5;
+	margin: 0.453125rem auto ;
+	text-align: center;
+}
+
+#chatContent .dialogue1,#chatContent .dialogue2{
+	margin:0.5rem 0.3125rem;
+}
+
+#chatContent .dialogue1 img{
+	width:1.25rem;
+	border-radius:50% ;
+	float: left;
+}
+
+#chatContent .dialogue1 .bg{
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	float: left;
+	position: relative;
+	border-radius: 5px;
+	padding:0.265625rem 0.3125rem 0.203125rem ;
+	margin-left:0.375rem ;
+	max-width:6.25rem;
+}
+
+#chatContent .dialogue1 .angle{
+	background: url(../img/angel1.png) no-repeat;
+	background-size:100% ;
+	width:0.234375rem;
+	height:0.40625rem;
+	position: absolute;
+	zoom: 10;
+	left:-0.234375rem;
+	top:0.40625rem;
+	display: inline-block;
+}
+#chatContent .bg p{
+	font: 0.5rem/0.75rem "微软雅黑";
+	color: #444444;
+}
+
+#chatContent .dialogue2 img{
+	width:1.25rem;
+	border-radius:50% ;
+	float:right;
+}
+
+#chatContent .bg2 p{
+	font: 0.5rem/0.75rem "微软雅黑";
+	color: #fff;
+	
+}
+
+#chatContent .dialogue2{
+	margin-top:0.625rem;
+}
+#chatContent .dialogue2 .bg2{
+	background:#ff6565;
+	padding:0.265625rem 0.3125rem 0.203125rem ;
+	max-width:6.25rem;
+	float:right;
+	border-radius: 5px;
+	position: relative;
+	margin-right:0.40625rem ;
+}
+
+#chatContent .dialogue2 .angle2{
+	background: url(../img/angel2.png) no-repeat;
+	background-size:100% ;
+	width:0.234375rem;
+	height:0.40625rem;
+	position: absolute;
+	zoom: 10;
+	right:-0.234375rem;
+	top:0.40625rem;
+	display: inline-block;
+}
+
+#chatContent .bg3 p,#chatContent .bg3 p{
+	font: 0.5rem/0.75rem "微软雅黑";
+	color: #444444;
+	
+}
+
+
+#chatContent .dialogue1 .bg3{
+	background:url(../img/talkBg3.png) no-repeat ;
+	background-size:100%;
+	height:3.46875rem ;
+	width:7.1875rem ;
+	margin-left:0.15625rem ;
+	float: left;
+}
+
+
+
+#chatContent .talkone{
+	margin-top:0.65625rem;
+}
+
+#chatContent  .bg4 p{
+	font: 0.5rem/1.25rem "微软雅黑";
+	color: #444444;
+}
+
+#chatContent .contentB{
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	width: 9.984375rem;
+	height: 1.515625rem;
+	background: #ffffff;
+	position: fixed;
+	float: left;
+	bottom: 0;
+	left: 0;
+}
+
+#chatContent .contentB input{
+	width:6.84375rem ;
+	height: 0.96875rem;
+	border: 1px solid #999;
+	text-indent: 8px;
+	border-radius: 3px;
+	position:relative;
+	left:0.484375rem;
+	top:-0.09rem;
+}
+
+#chatContent .contentB a{
+	width:1.875rem ;
+	height:1rem ;
+	position: relative;
+	display: inline-block;
+	top:-0.09rem;
+	left:0.46875rem;
+	background:#ff6565;
+	font:14px/1rem "微软雅黑" ;
+	color: #fff;
+	text-align: center;
+	border-radius:3px;
+}
+
+/************************ chat  end ************************/
+
+/************************ fansList  end ************************/
+#fansContent .tab{
+	width: 10rem;
+	height:1.375rem;
+	background: #fff;
+	border-bottom:1px solid #ccc ;
+}
+
+#fansContent .tab li{
+	width:2.1875rem;
+	height: 1.093rem ;
+	font:14px/0.5rem "微软雅黑";
+	padding-top:0.234375rem;
+	margin-left:1.40625rem ;
+	float: left;
+	text-align: center;
+	border-bottom: 2px solid #fff;
+}
+
+
+#fansContent .tab li a{
+	height: 1.09375rem ;
+	width:2.1875rem;
+	color:#999;
+	display: block;
+}
+
+#fansContent .tab li a:hover,#fansContent .tab li a.active{
+	color:#ec5656;
+	border-bottom: 2px solid #ec5656;
+}
+
+#fansContent .tab li span{
+	width:2.1875rem;
+	display: block;
+}
+
+#fansContent .tab .second{
+	margin-left: 2.8125rem;
+}
+#fansContent .list{
+	position: relative;
+}
+#fansContent .list li{
+	width: 10rem;
+	position: relative;
+	overflow: hidden;
+}
+
+#fansContent .list .headPortrait{
+	width:1.25rem;
+	margin:0.281rem 0.281rem 0.29687rem;
+	float: left;
+} 
+
+#fansContent  .headPortrait img{
+	width:1.25rem;
+	border-radius:50%;
+}
+
+#fansContent .txt{
+	padding-top:0.375rem ;
+	width: 7.93rem;
+	height:1.4843rem;
+	border-bottom: 1px solid #e5e5e5;
+	float:right;
+}
+
+#fansContent .txt p{
+	font: 14px/0.65625rem "微软雅黑";
+	font-weight: 500;
+	width: 6rem;
+	color: #282828;
+}
+
+#fansContent .txt .num{
+	font: 12px/0.65625rem "微软雅黑";
+	color: #999999;
+	display:block;
+	width: 6rem;
+}
+
+#fansContent .txt .information{
+	width:0.59375rem ;
+	height:0.59375rem  ;
+	background:url(../img/icon3.png) no-repeat ;
+	background-size:100% ;
+	position: absolute;
+	top: 0.625rem;
+	right: 0.46875rem;
+}
+/************************ fansList  end ************************/
+
+/************************ nofans  end ************************/
+#fansContent .nofansCon{
+	width:3.5rem ;
+	height:3.65625rem ;
+	margin:4.125rem 3.25rem 0 3.25rem;
+}
+
+#fansContent .nofansCon img{
+	margin: 0 0.625rem;
+	width: 2.1875rem;
+}
+
+#fansContent .nofansCon p{
+	font:14px/1.40625rem "微软雅黑" ;
+	color: #999;
+}
+/************************ nofans   end ************************/
+#pullUp{height:40px;width:110px;margin: 0 auto;}
+.pullUpLabel{color: #666;font-size: 14px;float:left;line-height: 40px;}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:40px;
+	background:url(../img/pull-icon.png) 0 0 no-repeat;
+	-webkit-background-size:40px 80px; background-size:40px 80px;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms;	
+}
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	display: block;
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+#pullUp.nomore{width:80px}
+#pullUp.nomore .pullUpIcon{display: none;}
+
+/*************************chat  ****************************************/
+#pullDown.nomore{width:80px}
+#pullDown.nomore .pullDownIcon{display: none;}
+#pullDown{height:40px;width:110px;margin: 0 auto;}
+.pullDownLabel{color: #666;font-size: 14px;float:left;line-height: 40px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
